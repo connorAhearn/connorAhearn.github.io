@@ -1,2 +1,3 @@
 # connorAhearn.github.io
-wow
+
+This is my personal website, the intended audience is potential employers
