@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>coolClock</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ff3d2e;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 2em;
+            font-family: 'Noto Sans', sans-serif;
+            color: #272F32;
+        }
+
+        .container.space-around {
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .container.space-around div {
+            width: 20px;
+            text-align: center;
+        }
+
+        .selected {
+            color: #affffb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container space-around">
+        <div>I</div>
+        <div>T</div>
+        <div>L</div>
+        <div>I</div>
+        <div>S</div>
+        <div>A</div>
+        <div>S</div>
+        <div class="am">A</div>
+        <div class="am">M</div>
+        <div class="pm">P</div>
+        <div class="pm">M</div>
+    </div>
+
+    <div class="container space-around">
+        <div>A</div>
+        <div>C</div>
+        <div class="quarter">Q</div>
+        <div class="quarter">U</div>
+        <div class="quarter">A</div>
+        <div class="quarter">R</div>
+        <div class="quarter">T</div>
+        <div class="quarter">E</div>
+        <div class="quarter">R</div>
+        <div>D</div>
+        <div>C</div>
+    </div>
+
+    <div class="container space-around">
+        <div class="twenty-pre">T</div>
+        <div class="twenty-pre">W</div>
+        <div class="twenty-pre">E</div>
+        <div class="twenty-pre">N</div>
+        <div class="twenty-pre">T</div>
+        <div class="twenty-pre">Y</div>
+        <div class="five-pre">F</div>
+        <div class="five-pre">I</div>
+        <div class="five-pre">V</div>
+        <div class="five-pre">E</div>
+        <div>X</div>
+    </div>
+
+    <div class="container space-around">
+        <div class="half">H</div>
+        <div class="half">A</div>
+        <div class="half">L</div>
+        <div class="half">F</div>
+        <div>S</div>
+        <div class="ten-pre">T</div>
+        <div class="ten-pre">E</div>
+        <div class="ten-pre">N</div>
+        <div>F</div>
+        <div class="to">T</div>
+        <div class="to">O</div>
+    </div>
+
+    <div class="container space-around">
+        <div class="past">P</div>
+        <div class="past">A</div>
+        <div class="past">S</div>
+        <div class="past">T</div>
+        <div>E</div>
+        <div>R</div>
+        <div>U</div>
+        <div class="nine">N</div>
+        <div class="nine">I</div>
+        <div class="nine">N</div>
+        <div class="nine">E</div>
+    </div>
+
+    <div class="container space-around">
+        <div class="one">O</div>
+        <div class="one">N</div>
+        <div class="one">E</div>
+        <div class="six">S</div>
+        <div class="six">I</div>
+        <div class="six">X</div>
+        <div class="three">T</div>
+        <div class="three">H</div>
+        <div class="three">R</div>
+        <div class="three">E</div>
+        <div class="three">E</div>
+    </div>
+
+    <div class="container space-around">
+        <div class="four">F</div>
+        <div class="four">O</div>
+        <div class="four">U</div>
+        <div class="four">R</div>
+        <div class="five">F</div>
+        <div class="five">I</div>
+        <div class="five">V</div>
+        <div class="five">E</div>
+        <div class="two">T</div>
+        <div class="two">W</div>
+        <div class="two">O</div>
+    </div>
+
+    <div class="container space-around">
+        <div class="eight">E</div>
+        <div class="eight">I</div>
+        <div class="eight">G</div>
+        <div class="eight">H</div>
+        <div class="eight">T</div>
+        <div class="eleven">E</div>
+        <div class="eleven">L</div>
+        <div class="eleven">E</div>
+        <div class="eleven">V</div>
+        <div class="eleven">E</div>
+        <div class="eleven">N</div>
+    </div>
+
+    <div class="container space-around">
+        <div class="seven">S</div>
+        <div class="seven">E</div>
+        <div class="seven">V</div>
+        <div class="seven">E</div>
+        <div class="seven">N</div>
+        <div class="twelve">T</div>
+        <div class="twelve">W</div>
+        <div class="twelve">E</div>
+        <div class="twelve">L</div>
+        <div class="twelve">V</div>
+        <div class="twelve">E</div>
+    </div>
+
+    <div class="container space-around">
+        <div class="ten">T</div>
+        <div class="ten">E</div>
+        <div class="ten">N</div>
+        <div>S</div>
+        <div>E</div>
+        <div class="oclock">O'</div>
+        <div class="oclock">C</div>
+        <div class="oclock">L</div>
+        <div class="oclock">O</div>
+        <div class="oclock">C</div>
+        <div class="oclock">K</div>
+    </div>
+
+    <script>
+        //Declaring
+        const am = document.querySelectorAll('.am');
+        const pm = document.querySelectorAll('.pm');
+        const quarter = document.querySelectorAll('.quarter');
+        const twenty_pre = document.querySelectorAll('.twenty-pre');
+        const five_pre = document.querySelectorAll(".five-pre");
+        const half = document.querySelectorAll(".half");
+        const ten_pre = document.querySelectorAll(".ten-pre");
+        const to = document.querySelectorAll(".to");
+        const past = document.querySelectorAll(".past");
+        const one = document.querySelectorAll(".one");
+        const two = document.querySelectorAll(".two");
+        const three = document.querySelectorAll(".three");
+        const four = document.querySelectorAll(".four");
+        const five = document.querySelectorAll(".five");
+        const six = document.querySelectorAll(".six");
+        const seven = document.querySelectorAll(".seven");
+        const eight = document.querySelectorAll(".eight");
+        const nine = document.querySelectorAll(".nine");
+        const ten = document.querySelectorAll(".ten");
+        const eleven = document.querySelectorAll(".eleven");
+        const twelve = document.querySelectorAll(".twelve");
+        const oclock = document.querySelectorAll(".oclock");
+
+        const times = [twelve, one, two, three, four, five, six, seven,
+            eight, nine, ten, eleven];
+
+        function activate(word) {
+            let wordStr = "";
+            word.forEach(letter => {
+                letter.classList.add("selected");
+                wordStr += letter.innerHTML;
+            });
+
+            console.log(`${wordStr} Activated`);
+        }
+
+        function deactivate(word) {
+            let wordStr = "";
+            word.forEach(letter => {
+                letter.classList.remove("selected");
+                wordStr += letter.innerHTML;
+            });
+
+            console.log(`${wordStr} Deactivated`);
+        }
+
+        function start() {
+
+            //Basic data collection
+            let current = new Date();
+            let rawHours = current.getHours();
+            let minutes = current.getMinutes();
+
+            //Setting AM / PM
+            if (rawHours > 11) activate(pm);
+            else activate(am);
+
+            //Setting Minutes term
+            if (minutes < 2 || minutes > 57) activate(oclock);
+
+            else if (minutes < 7 && minutes >= 2) {
+                activate(five_pre);
+                activate(past);
+            }
+
+            else if (minutes < 12 && minutes >= 7) {
+                activate(ten_pre);
+                activate(past);
+            }
+
+            else if (minutes < 17 && minutes >= 12) {
+                activate(quarter);
+                activate(past);
+            }
+
+            else if (minutes < 22 && minutes >= 17) {
+                activate(twenty_pre);
+                activate(past);
+            }
+
+            else if (minutes < 27 && minutes >= 22) {
+                activate(twenty_pre);
+                activate(past);
+                activate(five_pre);
+            }
+
+            else if (minutes < 32 && minutes >= 27) {
+                activate(half);
+                activate(past);
+            }
+
+            else if (minutes < 37 && minutes >= 32) {
+                activate(twenty_pre);
+                activate(five_pre);
+                activate(to);
+            }
+
+            else if (minutes < 42 && minutes >= 37) {
+                activate(twenty_pre);
+                activate(to);
+            }
+
+            else if (minutes < 47 && minutes >= 42) {
+                activate(quarter);
+                activate(to);
+            }
+
+            else if (minutes < 52 && minutes >= 47) {
+                activate(ten_pre);
+                activate(to);
+            }
+
+            else if (minutes < 57 && minutes >= 52) {
+                activate(five_pre);
+                activate(to);
+            }
+
+            //Setting hours
+            rawHours = (minutes >= 32) ? ++rawHours : rawHours;
+            rawHours = (rawHours == 24) ? 0 : rawHours;
+            let hours = (rawHours < 12) ? rawHours : rawHours - 12;
+            activate(times[hours]);
+
+            //Log hours and minutes every check
+            console.log(`Time of update ${counter++}:\nHour = ${--hours}\nMinute = ${minutes}\n`);
+        }
+
+        function refresh() {
+
+            //Basic data collection
+            let current = new Date();
+            let rawHours = current.getHours();
+            let minutes = current.getMinutes();
+
+            //Setting AM / PM
+            if (rawHours > 11) {
+                activate(pm);
+                deactivate(am);
+            }
+            else {
+                activate(am);
+                deactivate(pm);
+            }
+
+            //Setting Minutes term
+            if (minutes < 2 || minutes > 57) {
+                activate(oclock);
+                deactivate(five_pre);
+                deactivate(to);
+            }
+            else if (minutes < 7 && minutes >= 2) {
+                activate(five_pre);
+                activate(past);
+                deactivate(oclock);
+            }
+            else if (minutes < 12 && minutes >= 7) {
+                activate(ten_pre);
+                activate(past);
+                deactivate(five_pre);
+            }
+            else if (minutes < 17 && minutes >= 12) {
+                activate(quarter);
+                activate(past);
+                deactivate(ten_pre);
+            }
+            else if (minutes < 22 && minutes >= 17) {
+                activate(twenty_pre);
+                activate(past);
+                deactivate(quarter);
+            }
+            else if (minutes < 27 && minutes >= 22) {
+                activate(twenty_pre);
+                activate(past);
+                activate(five_pre);
+            }
+            else if (minutes < 32 && minutes >= 27) {
+                activate(half);
+                activate(past);
+                deactivate(twenty_pre);
+                deactivate(five_pre);
+            }
+            else if (minutes < 37 && minutes >= 32) {
+                activate(twenty_pre);
+                activate(five_pre);
+                activate(to);
+                deactivate(half);
+                deactivate(past);
+            }
+            else if (minutes < 42 && minutes >= 37) {
+                activate(twenty_pre);
+                activate(to);
+                deactivate(five_pre);
+            }
+            else if (minutes < 47 && minutes >= 42) {
+                activate(quarter);
+                activate(to);
+                deactivate(twenty_pre);
+            }
+            else if (minutes < 52 && minutes >= 47) {
+                activate(ten_pre);
+                activate(to);
+                deactivate(quarter);
+            }
+            else if (minutes < 57 && minutes >= 52) {
+                activate(five_pre);
+                activate(to);
+                deactivate(ten_pre);
+            }
+
+            //Setting hours
+            rawHours = (minutes >= 32) ? ++rawHours : rawHours;
+            rawHours = (rawHours == 24) ? 0 : rawHours;
+            let hours = (rawHours < 12) ? rawHours : rawHours - 12;
+            activate(times[hours]);
+            deactivate(times[hours - 1]);
+
+             //Log hours and minutes every check
+             console.log(`Time of update ${counter++}:\nHour = ${--hours}\nMinute = ${minutes}\n`);
+        }
+
+        var counter = 1;
+        start();
+        setInterval(refresh, 30000);
+
+
+        /**
+        * TEST CODE
+        *
+
+        function test(word) {
+            word.forEach(letter => {
+                letter.classList.add("selected");
+            });
+
+            setTimeout(() => {
+                word.forEach(letter => {
+                    letter.classList.remove("selected");
+                })
+            }, 3000);
+        }
+
+        const allWords = [am, pm, quarter, twenty_pre, five_pre, 
+        half, ten_pre, to, past, one, two, three, four, five, six,
+        seven, eight, nine, ten, eleven, twelve, oclock];
+
+        allWords.forEach(word => {
+            setTimeout(test(word), 3000);
+        });
+
+        */
+    </script>
+</body>
+
+</html>
