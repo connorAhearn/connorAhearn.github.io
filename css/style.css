@@ -24,11 +24,6 @@ a {
     text-decoration: none;
 }
 
-a h3 {
-    padding: 0px;
-    margin: 0px;
-}
-
 .flex {
     display: flex;
     flex-wrap: wrap;
@@ -45,7 +40,7 @@ a h3 {
     flex-grow: 1;
 }
 
-.flex a {
+.black .flex a {
     display: block;
     flex-grow: 1;
     padding: 0px 20px 0px 20px;
@@ -54,6 +49,11 @@ a h3 {
     border-radius: 20px;
     background-color: rgba(240, 240, 223, 0.2);
     margin: 0px 10px 20px 10px;
+}
+
+.black a h3 {
+    padding: 0px;
+    margin: 0px;
 }
 
 .flex-card {
