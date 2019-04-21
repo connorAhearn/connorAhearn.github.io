@@ -1,0 +1,131 @@
+{
+  "_args": [
+    [
+      "@glidejs/glide",
+      "/home/connor/Desktop/game_of_thrones"
+    ]
+  ],
+  "_from": "@glidejs/glide@latest",
+  "_hasShrinkwrap": false,
+  "_id": "@glidejs/glide@3.3.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@glidejs/glide",
+  "_nodeVersion": "10.15.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/glide_3.3.0_1555792807742_0.23288264234108924"
+  },
+  "_npmUser": {
+    "email": "jedrzej.chalubek@gmail.com",
+    "name": "jedrzejchalubek"
+  },
+  "_npmVersion": "6.4.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "@glidejs/glide",
+    "raw": "@glidejs/glide",
+    "rawSpec": "",
+    "scope": "@glidejs",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@glidejs/glide/-/glide-3.3.0.tgz",
+  "_shasum": "5d0a0cddad863a66272a15826919c64c60351094",
+  "_shrinkwrap": null,
+  "_spec": "@glidejs/glide",
+  "_where": "/home/connor/Desktop/game_of_thrones",
+  "author": {
+    "email": "jedrzej.chalubek@gmail.com",
+    "name": "Jędrzej Chałubek",
+    "url": "http://jedrzejchalubek.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/glidejs/glide/issues"
+  },
+  "dependencies": {},
+  "description": "Glide.js is a dependency-free JavaScript ES6 slider and carousel. It’s lightweight, flexible and fast. Designed to slide. No less, no more",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^23.4.2",
+    "jsdom": "11.11.0",
+    "node-sass": "^4.11.0",
+    "npm-watch": "^0.2.0",
+    "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-uglify": "^2.0.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-scss": "^2.5.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dist": {
+    "fileCount": 85,
+    "integrity": "sha512-8rs4yGHRlCOvubBM7RyB4sijzl0q5ST7Yvv9frSb8xIRWdztoY7lP/uMMc9GBEM0up5MvxIYWOXig1b5gT/j2A==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcu4OoCRA9TVsSAnZWagAAeeMP/3AqRZh+ePvCEzc9xw5J\nFX+4/D5kwg24knGaH4HMaq9ISIH6KaLRQIKVDXbTHght1M/bgfVLrKSPeREy\nK/zyOdk6Ok7u/J9ZJJVgtWQJcyWfafcmJUdTo0EtXCskqJ85gfkB9N/jRGqL\n2cKrqSFIHjE13GJRtpOq+Mf9Xo2L5XdpK6CBAHw5z0r5SlZALEiyBwXtGGRt\ndyddfwvdHgoPD4AZ6oXCObgl40L2Nn//UTsFBYOUAJnzvHrylgDylH4xZfsg\nuoGUVXWbZFGddW16HMtzc9M1fNSoBLk+o2rqMIaAFFB5ZkY37Fuye/Kr+3va\np+xXURMF0nIFbLtaYZD0wn52OXXU31bwyr2de7zvh+EBUaQP+NwJ3rDbg8Zz\nOJe/+ROid6iEVUl1W9PFC66Hy/cJ8epa+7gt2kBcwIpjL4msLRvq8fwH11g7\nakaZi9V0Ai+q2IWGgo4a5C0unmeYOfv6qUiDlUC4mGBcH1KcM49VPjpg6/5U\nyepukBkDHCg+Cq3biQvO9Bq4dqxNmIRE5+3dcZz7xHqre3F801Bz3toFRguk\n2ZkJR27Hl/muAcyknb+63le52HZVpYcaC/kppvdha/NaPF11si0iJUVtRWe7\nCekr9fbr+kZAx51xA55y2EmKNK6cwwXXTjw2XOWlnV82r/2+PqotGQGTqO7z\nUphg\r\n=v/OL\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "5d0a0cddad863a66272a15826919c64c60351094",
+    "tarball": "https://registry.npmjs.org/@glidejs/glide/-/glide-3.3.0.tgz",
+    "unpackedSize": 392211
+  },
+  "gitHead": "593ad78d0f85bd7bcb6ac6ef487c607718605a89",
+  "homepage": "https://glidejs.com",
+  "keywords": [
+    "carousel",
+    "fast",
+    "lightweight",
+    "responsive",
+    "simple",
+    "slider",
+    "touch"
+  ],
+  "license": "MIT",
+  "main": "dist/glide.js",
+  "maintainers": [
+    {
+      "name": "jedrzejchalubek",
+      "email": "jedrzej.chalubek@gmail.com"
+    }
+  ],
+  "module": "dist/glide.esm.js",
+  "name": "@glidejs/glide",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glidejs/glide.git"
+  },
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "npm run sass:core && npm run sass:theme",
+    "build:esm": "rollup --config build/esm.js && rollup --config build/esm.modular.js",
+    "build:js": "npm run build:esm && npm run build:umd",
+    "build:umd": "rollup --config build/umd.js && rollup --config build/umd.min.js",
+    "lint": "eslint {src,tests}/**/*.js",
+    "sass:core": "node-sass src/assets/sass/glide.core.scss dist/css/glide.core.css && node-sass src/assets/sass/glide.core.scss dist/css/glide.core.min.css --output-style=compressed",
+    "sass:theme": "node-sass src/assets/sass/glide.theme.scss dist/css/glide.theme.css && node-sass src/assets/sass/glide.theme.scss dist/css/glide.theme.min.css --output-style=compressed",
+    "test": "jest tests/**/*.test.js",
+    "watch": "npm-watch"
+  },
+  "unpkg": "dist/glide.js",
+  "version": "3.3.0",
+  "watch": {
+    "build:css": "assets/**/*.scss",
+    "build:js": "src/**/*.js",
+    "test": "{src,test}/**/*.js"
+  }
+}
