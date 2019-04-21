@@ -6,20 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Game of Thrones Predictions</title>
+
+    <!--Required links for using glide.js 
+        
+        Required Core Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <!-- Optional Theme Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+
+    <style>
+        .glide__arrow {
+            background-color: #888888;
+        }
+    </style>
 </head>
 
 <body>
-    <canvas id="myChart"></canvas>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script>
 
-        let adam = 0;
-        let chris = 0;
-        let connor = 0;
-        let jac = 0;
-        let julia = 0;
+        //let adam = 0;
+        //let chris = 0;
+        //let connor = 0;
+        //let jac = 0;
+        //let julia = 0;
 
-        let answers = [
+        let start = [];
+        let episode1 = [];
+        let episode2 = [];
+        let episode3 = [];
+        let episode4 = [];
+        let episode5 = [];
+        let episode6 = [];
+
+        let start_answers = [
             1,      // Jon alive
             1,      // Arya alive
             1,      // Sansa alive
@@ -58,66 +77,226 @@
             1       // Hot Pie alive   
         ];
 
+        // Since nobody died in episode 1, the answers are the same as the start
+        let ep1_answers = start_answers;
+
+        // Future episodes will be updated as they air
+        let ep2_answers = ep1_answers;
+        let ep3_answers = ep2_answers;
+        let ep4_answers = ep3_answers;
+        let ep5_answers = ep4_answers;
+        let ep6_answers = ep5_answers;
+
         function update_scores(predictions, answers) {
 
             let score = 0;
 
             for (let i = 0; i < answers.length; i++) {
-                if (answers[i] == predictions [i]) score++;
+                if (answers[i] == predictions[i]) score++;
             }
 
             return score;
         }
 
-        let adam_predictions = [1,1,1,0,0,0,0,0,0,0,1,0,0,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0];
-        let chris_predictions = [0,1,0,1,0,0,0,0,1,0,0,0,0,0,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1];
-        let connor_predicitons = [0,1,1,0,0,0,0,1,0,0,1,1,1,1,0,1,1,1,1,0,1,0,1,0,0,1,0,0,0,0,1,0,1,1,0,1];
-        let jac_predictions = [1,1,1,0,1,0,1,0,0,0,1,1,0,1,1,1,1,1,0,0,1,0,0,1,0,0,0,1,1,1,1,0,0,0,0,1];
-        let julia_predictions = [1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1];
+        let adam_predictions = [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0];
+        let chris_predictions = [0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1];
+        let connor_predicitons = [0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1];
+        let jac_predictions = [1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1];
+        let julia_predictions = [1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
-        adam = update_scores(adam_predictions, answers);
-        chris = update_scores(chris_predictions, answers);
-        connor = update_scores(connor_predicitons, answers);
-        jac = update_scores(jac_predictions, answers);
-        julia = update_scores(julia_predictions, answers);
+        start[0] = update_scores(adam_predictions, start_answers);
+        start[1] = update_scores(chris_predictions, start_answers);
+        start[2] = update_scores(connor_predicitons, start_answers);
+        start[3] = update_scores(jac_predictions, start_answers);
+        start[4] = update_scores(julia_predictions, start_answers);
 
+        episode1[0] = update_scores(adam_predictions, ep1_answers);
+        episode1[1] = update_scores(chris_predictions, ep1_answers);
+        episode1[2] = update_scores(connor_predicitons, ep1_answers);
+        episode1[3] = update_scores(jac_predictions, ep1_answers);
+        episode1[4] = update_scores(julia_predictions, ep1_answers);
 
+        episode2[0] = update_scores(adam_predictions, ep2_answers);
+        episode2[1] = update_scores(chris_predictions, ep2_answers);
+        episode2[2] = update_scores(connor_predicitons, ep2_answers);
+        episode2[3] = update_scores(jac_predictions, ep2_answers);
+        episode2[4] = update_scores(julia_predictions, ep2_answers);
+
+        episode3[0] = update_scores(adam_predictions, ep3_answers);
+        episode3[1] = update_scores(chris_predictions, ep3_answers);
+        episode3[2] = update_scores(connor_predicitons, ep3_answers);
+        episode3[3] = update_scores(jac_predictions, ep3_answers);
+        episode3[4] = update_scores(julia_predictions, ep3_answers);
+
+        episode4[0] = update_scores(adam_predictions, ep4_answers);
+        episode4[1] = update_scores(chris_predictions, ep4_answers);
+        episode4[2] = update_scores(connor_predicitons, ep4_answers);
+        episode4[3] = update_scores(jac_predictions, ep4_answers);
+        episode4[4] = update_scores(julia_predictions, ep4_answers);
+
+        episode5[0] = update_scores(adam_predictions, ep5_answers);
+        episode5[1] = update_scores(chris_predictions, ep5_answers);
+        episode5[2] = update_scores(connor_predicitons, ep5_answers);
+        episode5[3] = update_scores(jac_predictions, ep5_answers);
+        episode5[4] = update_scores(julia_predictions, ep5_answers);
+
+        episode6[0] = update_scores(adam_predictions, ep6_answers);
+        episode6[1] = update_scores(chris_predictions, ep6_answers);
+        episode6[2] = update_scores(connor_predicitons, ep6_answers);
+        episode6[3] = update_scores(jac_predictions, ep6_answers);
+        episode6[4] = update_scores(julia_predictions, ep6_answers);
 
     </script>
+    <!-- peen -->
+
+    <div class="glide">
+
+        <!-- Adding the controls to the slider -->
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+        </div>
+
+        <!-- Import needs to be before slider in order for graphs to work -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+        <!-- Slider Content -->
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+
+                <!-- Bar Chart -->
+                <li class="glide__slide" style="text-align: center;">
+                    <canvas id="barChart"></canvas>
+                    <script>
+                        var barChart = document.getElementById('barChart').getContext('2d');
+                        var chart = new Chart(barChart, {
+                            // The type of chart we want to create
+                            type: 'bar',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['Adam', 'Chris', 'Connor', 'Jac', 'Julia'],
+                                datasets: [{
+                                    label: 'Total Prediction Score',
+                                    backgroundColor: ['#93d7ff', '#d9c9ff', '#ffe1c9', '#d0ffc9', '#ffc9f0'],
+                                    data: [episode6[0], episode6[1], episode6[2], episode6[3], episode6[4], episode6[5]]
+                                }]
+                            },
+
+                            // Configuration options go here
+                            options: {
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    yAxes: [{
+                                        ticks: { min: 0 }
+                                    }]
+                                }
+                            }
+                        });
+
+                        Chart.scaleService.updateScaleDefaults('linear', {
+                            ticks: {
+                                min: 0
+                            }
+                        });
+
+                    </script>
+                </li>
+
+                <!-- Line Chart -->
+                <li class="glide__slide">
+                    <canvas id="lineChart"></canvas>
+                    <script>
+                        var lineChart = document.getElementById('lineChart').getContext('2d');
+                        var chart = new Chart(lineChart, {
+                            // The type of chart we want to create
+                            type: 'line',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['Start', 'Ep1', 'Ep2', 'Ep3', 'Ep4', 'Ep5', 'Ep6'],
+                                datasets: [
+                                    {   //['#93d7ff', '#d9c9ff', '#ffe1c9', '#d0ffc9', '#ffc9f0']
+                                        label: 'Adam',
+                                        borderColor: '#93d7ff',
+                                        backgroundColor: "#93d7ff",
+                                        fill: false,
+                                        data: [start[0], episode1[0], episode2[0], episode3[0], episode4[0], episode5[0], episode6[0]]
+                                    },
+                                    {
+                                        label: 'Chris',
+                                        borderColor: '#d9c9ff',
+                                        backgroundColor: "#d9c9ff",
+                                        fill: false,
+                                        data: [start[1], episode1[1], episode2[1], episode3[1], episode4[1], episode5[1], episode6[1]]
+                                    },
+                                    {
+                                        label: 'Connor',
+                                        borderColor: '#ffe1c9',
+                                        backgroundColor: "#ffe1c9",
+                                        fill: false,
+                                        data: [start[2], episode1[2], episode2[2], episode3[2], episode4[2], episode5[2], episode6[2]]
+                                    },
+                                    {
+                                        label: 'Jac',
+                                        borderColor: '#d0ffc9',
+                                        backgroundColor: "#d0ffc9",
+                                        fill: false,
+                                        data: [start[3], episode1[3], episode2[3], episode3[3], episode4[3], episode5[3], episode6[3]]
+                                    },
+                                    {
+                                        label: 'Julia',
+                                        borderColor: '#ffc9f0',
+                                        backgroundColor: "#ffc9f0",
+                                        fill: false,
+                                        data: [start[4], episode1[4], episode2[4], episode3[4], episode4[4], episode5[4], episode6[4]]
+                                    }]
+                            },
+
+                            // Configuration options go here
+                            options: {
+                                elements: {
+                                    line: {
+                                        /*
+                                            This line ensures that lines are straight
+                                            on our line graph. They were bezier curves
+                                            by default
+                                        */
+                                        tension: 0
+                                    }
+                                },
+
+                                scales: {
+                                    yAxes: [{
+                                        /*
+                                            This ensures that the y axis always includes 0
+                                        */
+                                        ticks: { min: 0 }
+                                    }]
+                                }
+                            }
+                        });
+
+                    </script>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+
     <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'bar',
-
-            // The data for our dataset
-            data: {
-                labels: ['Adam', 'Chris', 'Connor', 'Jac', 'Julia'],
-                datasets: [{
-                    label: 'Total Prediction Score',
-                    backgroundColor: ['red', 'green', 'blue', 'purple', 'orange'],//'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: [adam, chris, connor, jac, julia]
-                }]
-            },
-
-            // Configuration options go here
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {min: 0}
-                    }]
-                }
-            }
-        });
-
-        Chart.scaleService.updateScaleDefaults('linear', {
-            ticks: {
-                min: 0
-            }
-        });
-
+        new Glide('.glide').mount()
     </script>
+
+
+
 </body>
 
 </html>
