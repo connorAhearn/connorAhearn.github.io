@@ -1,0 +1,11 @@
+{
+  "name": "game_of_thrones",
+  "version": "1.0.0",
+  "description": "Game of thrones web page project",
+  "main": "got.htm",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Connor Ahearn",
+  "license": "ISC"
+}

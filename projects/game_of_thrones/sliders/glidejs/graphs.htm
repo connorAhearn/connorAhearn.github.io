@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!--Required links for using glide.js 
+        
+        Required Core Stylesheet -->
+    <link rel="stylesheet" href="../../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <!-- Optional Theme Stylesheet -->
+    <link rel="stylesheet" href="../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+</head>
+
+<body>
+
+    <!-- peen -->
+
+    <div class="glide">
+
+        <!-- Adding the controls to the slider -->
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+        </div>
+
+        <!-- Import needs to be before slider in order for graphs to work -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+        <!-- Slider Content -->
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+
+                <!-- Bar Chart -->
+                <li class="glide__slide" style="text-align: center;">
+                    <canvas id="barChart"></canvas>
+                    <script>
+                        var barChart = document.getElementById('barChart').getContext('2d');
+                        var chart = new Chart(barChart, {
+                            // The type of chart we want to create
+                            type: 'bar',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['Adam', 'Chris', 'Connor', 'Jac', 'Julia'],
+                                datasets: [{
+                                    label: 'Total Prediction Score',
+                                    backgroundColor: ['#93d7ff', '#d9c9ff', '#ffe1c9', '#d0ffc9', '#ffc9f0'],
+                                    data: [adam, chris, connor, jac, julia]
+                                }]
+                            },
+
+                            // Configuration options go here
+                            options: {
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    yAxes: [{
+                                        ticks: { min: 0 }
+                                    }]
+                                }
+                            }
+                        });
+
+                        Chart.scaleService.updateScaleDefaults('linear', {
+                            ticks: {
+                                min: 0
+                            }
+                        });
+
+                    </script>
+                </li>
+
+                <!-- Line Chart -->
+                <li class="glide__slide">
+                    <canvas id="lineChart"></canvas>
+                    <script>
+                        var lineChart = document.getElementById('lineChart').getContext('2d');
+                        var chart = new Chart(lineChart, {
+                            // The type of chart we want to create
+                            type: 'line',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['Start', 'Ep1', 'Ep2', 'Ep3', 'Ep4', 'Ep5', 'Ep6'],
+                                datasets: [
+                                    {   //['#93d7ff', '#d9c9ff', '#ffe1c9', '#d0ffc9', '#ffc9f0']
+                                        label: 'Adam',
+                                        borderColor: '#93d7ff',
+                                        backgroundColor: "#93d7ff",
+                                        fill: false,
+                                        data: [20, 4, 23, 24, 70]
+                                    },
+                                    {
+                                        label: 'Chris',
+                                        borderColor: '#d9c9ff',
+                                        backgroundColor: "#d9c9ff",
+                                        fill: false,
+                                        data: [21, 14, 13, 14, 30]
+                                    },
+                                    {
+                                        label: 'Connor',
+                                        borderColor: '#ffe1c9',
+                                        backgroundColor: "#ffe1c9",
+                                        fill: false,
+                                        data: [30, 43, 23, 23, 60]
+                                    },
+                                    {
+                                        label: 'Jac',
+                                        borderColor: '#d0ffc9',
+                                        backgroundColor: "#d0ffc9",
+                                        fill: false,
+                                        data: [10, 14, 21, 14, 71]
+                                    },
+                                    {
+                                        label: 'Julia',
+                                        borderColor: '#ffc9f0',
+                                        backgroundColor: "#ffc9f0",
+                                        fill: false,
+                                        data: [16, 16, 16, 16, 16]
+                                    }]
+                            },
+
+                            // Configuration options go here
+                            options: {
+                                elements: {
+                                    line: {
+                                        /*
+                                            This line ensures that lines are straight
+                                            on our line graph. They were bezier curves
+                                            by default
+                                        */
+                                        tension: 0
+                                    }
+                                },
+
+                                scales: {
+                                    yAxes: [{
+                                        /*
+                                            This ensures that the y axis always includes 0
+                                        */
+                                        ticks: { min: 0 }
+                                    }]
+                                }
+                            }
+                        });
+
+                    </script>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <script src="../../node_modules/@glidejs/glide/dist/glide.min.js"></script>
+
+    <script>
+        new Glide('.glide').mount()
+    </script>
+
+
+
+
+</body>
+
+</html>
