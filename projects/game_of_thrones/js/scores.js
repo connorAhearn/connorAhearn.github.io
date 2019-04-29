@@ -106,8 +106,47 @@ let start_answers = [
 let ep1_answers = start_answers;
 let ep2_answers = start_answers;
 
+// Episode 3 was the first episode with any deaths
+let ep3_answers = [
+    1,      // Jon alive
+    1,      // Arya alive
+    1,      // Sansa alive
+    1,      // Bran alive
+    1,      // Daenerys alive
+    1,      // Cersei alive
+    1,      // Jamie alive
+    1,      // Tyrion alive
+    1,      // Brienne alive
+    0,      // Melisandre alive
+    1,      // Varys alive
+    1,      // Davos alive
+    1,      // Gendry alive
+    1,      // Samwell alive
+    1,      // Gilly alive
+    1,      // Baby Sam alive
+    1,      // Ghost alive
+    1,      // Nymeria alive
+    0,      // The Night King alive
+    0,      // Jorah Mormont alive
+    0,      // Lyanna Mormont alive
+    1,      // Qyburn alive
+    1,      // The Mountain alive
+    1,      // The Hound alive
+    1,      // Euron alive
+    0,      // Theon alive
+    1,      // Yara alive
+    1,      // Bronn alive
+    1,      // Podrick alive
+    1,      // Grey Worm alive
+    1,      // Missandei alive
+    0,      // Beric alive
+    1,      // Tormund alive
+    1,      // Drogon alive
+    0,      // Rhaegal alive
+    1       // Hot Pie alive   
+];
+
 // Future episodes will be updated as they air
-let ep3_answers = ep2_answers;
 let ep4_answers = ep3_answers;
 let ep5_answers = ep4_answers;
 let ep6_answers = ep5_answers;
