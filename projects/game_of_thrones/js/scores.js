@@ -163,6 +163,11 @@ function update_scores(predictions, answers) {
         if (answers[i] == predictions[i]) score++;
     }
 
+    // Special Case of Predicting who kills the Night King: +3 Points
+    if (predictions === connor_predictions || predictions === julia_predictions) {
+        score += 3;
+    }
+
     return score;
 }
 
