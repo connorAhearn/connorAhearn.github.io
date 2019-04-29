@@ -164,7 +164,7 @@ function update_scores(predictions, answers) {
     }
 
     // Special Case of Predicting who kills the Night King: +3 Points
-    if (predictions === connor_predictions || predictions === julia_predictions) {
+    if ((predictions === connor_predictions || predictions === julia_predictions) && (answers !== start_answers)) {
         score += 3;
     }
 
