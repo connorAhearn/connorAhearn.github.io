@@ -142,7 +142,7 @@ let ep3_answers = [
     0,      // Beric alive
     1,      // Tormund alive
     1,      // Drogon alive
-    0,      // Rhaegal alive
+    1,      // Rhaegal alive
     1       // Hot Pie alive   
 ];
 
