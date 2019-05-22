@@ -146,10 +146,122 @@ let ep3_answers = [
     1       // Hot Pie alive   
 ];
 
-// Future episodes will be updated as they air
-let ep4_answers = ep3_answers;
-let ep5_answers = ep4_answers;
-let ep6_answers = ep5_answers;
+let ep4_answers = [
+    1,      // Jon alive
+    1,      // Arya alive
+    1,      // Sansa alive
+    1,      // Bran alive
+    1,      // Daenerys alive
+    1,      // Cersei alive
+    1,      // Jamie alive
+    1,      // Tyrion alive
+    1,      // Brienne alive
+    0,      // Melisandre alive
+    1,      // Varys alive
+    1,      // Davos alive
+    1,      // Gendry alive
+    1,      // Samwell alive
+    1,      // Gilly alive
+    1,      // Baby Sam alive
+    1,      // Ghost alive
+    1,      // Nymeria alive
+    0,      // The Night King alive
+    0,      // Jorah Mormont alive
+    0,      // Lyanna Mormont alive
+    1,      // Qyburn alive
+    1,      // The Mountain alive
+    1,      // The Hound alive
+    1,      // Euron alive
+    0,      // Theon alive
+    1,      // Yara alive
+    1,      // Bronn alive
+    1,      // Podrick alive
+    1,      // Grey Worm alive
+    0,      // Missandei alive
+    0,      // Beric alive
+    1,      // Tormund alive
+    1,      // Drogon alive
+    0,      // Rhaegal alive
+    1       // Hot Pie alive   
+];
+
+let ep5_answers = [
+    1,      // Jon alive
+    1,      // Arya alive
+    1,      // Sansa alive
+    1,      // Bran alive
+    1,      // Daenerys alive
+    0,      // Cersei alive
+    0,      // Jamie alive
+    1,      // Tyrion alive
+    1,      // Brienne alive
+    0,      // Melisandre alive
+    0,      // Varys alive
+    1,      // Davos alive
+    1,      // Gendry alive
+    1,      // Samwell alive
+    1,      // Gilly alive
+    1,      // Baby Sam alive
+    1,      // Ghost alive
+    1,      // Nymeria alive
+    0,      // The Night King alive
+    0,      // Jorah Mormont alive
+    0,      // Lyanna Mormont alive
+    0,      // Qyburn alive
+    0,      // The Mountain alive
+    0,      // The Hound alive
+    0,      // Euron alive
+    0,      // Theon alive
+    1,      // Yara alive
+    1,      // Bronn alive
+    1,      // Podrick alive
+    1,      // Grey Worm alive
+    0,      // Missandei alive
+    0,      // Beric alive
+    1,      // Tormund alive
+    1,      // Drogon alive
+    0,      // Rhaegal alive
+    1       // Hot Pie alive   
+];
+
+let ep6_answers = [
+    1,      // Jon alive
+    1,      // Arya alive
+    1,      // Sansa alive
+    1,      // Bran alive
+    0,      // Daenerys alive
+    0,      // Cersei alive
+    0,      // Jamie alive
+    1,      // Tyrion alive
+    1,      // Brienne alive
+    0,      // Melisandre alive
+    0,      // Varys alive
+    1,      // Davos alive
+    1,      // Gendry alive
+    1,      // Samwell alive
+    1,      // Gilly alive
+    1,      // Baby Sam alive
+    1,      // Ghost alive
+    1,      // Nymeria alive
+    0,      // The Night King alive
+    0,      // Jorah Mormont alive
+    0,      // Lyanna Mormont alive
+    0,      // Qyburn alive
+    0,      // The Mountain alive
+    0,      // The Hound alive
+    0,      // Euron alive
+    0,      // Theon alive
+    1,      // Yara alive
+    1,      // Bronn alive
+    1,      // Podrick alive
+    1,      // Grey Worm alive
+    0,      // Missandei alive
+    0,      // Beric alive
+    1,      // Tormund alive
+    1,      // Drogon alive
+    0,      // Rhaegal alive
+    1       // Hot Pie alive   
+];
 
 /*
     Function takes a particular set of predictions and the state of an episode
@@ -167,6 +279,8 @@ function update_scores(predictions, answers) {
     if ((predictions === connor_predictions || predictions === julia_predictions) && (answers !== start_answers)) {
         score += 3;
     }
+
+    if (predictions == chris_predictions) score += 5;
 
     return score;
 }
